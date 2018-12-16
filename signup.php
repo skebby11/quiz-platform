@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="style.css">
 	
 
-	<title>Login</title>
+	<title>Signup</title>
 </head>
 <body>
 	
@@ -43,31 +43,40 @@
 	</div>
 	
 	
-	<form method="post" action="singup.php">
+	<?php echo display_error(); ?>
+	
+	
+	<form method="post" action="signup.php" class="big-padding">
 
-		<?php echo display_error(); ?>
-
-		<div class="form-group row">
-   		 <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-   		 <div class="col-sm-10">
-     		 <input type="email" name="email" class="form-control" placeholder="Email">
-    	 </div>
- 	    </div>
+		<?php echo $username, $password_2, $email; ?>
+		
 		<div class="form-group row">
    		 <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
    		 <div class="col-sm-10">
-     		 <input type="text" name="username" class="form-control" placeholder="Username">
+     		 <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+    	 </div>
+ 	    </div>
+		<div class="form-group row">
+   		 <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+   		 <div class="col-sm-10">
+     		 <input type="email" name="email" class="form-control" value="<?php echo $email; ?>">
     	 </div>
  	    </div>
 		<div class="form-group row">
    		 <label for="inputEmail3" class="col-sm-2 col-form-label">Password</label>
    		 <div class="col-sm-10">
-     		 <input type="password" name="password" class="form-control" placeholder="Password">
+     		 <input type="password" name="password_1" class="form-control">
     	 </div>
  	    </div>
 		<div class="form-group row">
+   		 <label for="inputEmail3" class="col-sm-2 col-form-label">Confirm password</label>
+   		 <div class="col-sm-10">
+     		 <input type="password" name="password_2" class="form-control">
+    	 </div>
+ 	    </div>
+		<div class="form-group row mid-padding">
     		<div class="col-sm-10">
-      			<button type="submit" class="btn btn-primary" name="login_btn">Login</button>
+      			<button type="submit" class="btn btn-primary" name="register_btn">Signup</button>
     		</div>
   		</div>
 	</form>

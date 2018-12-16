@@ -2,7 +2,7 @@
 <?php include('functions.php');
 		if (!isLoggedIn()) {
 		$_SESSION['msg'] = "You must be logged in";
-		// header('location: login.php');
+		 header('location: login.php');
 	}
 ?>
 <!DOCTYPE html>
@@ -32,7 +32,7 @@
 			<strong><?php echo $_SESSION['user']['username']; ?></strong>
 
 			<small>
-				<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
+				<i  style="color: #888;">(<?php echo $_SESSION['user']['email']; ?>)</i> 
 				<br>
 				<a href="index.php?logout='1'" style="color: red;">logout</a>
 			</small>
