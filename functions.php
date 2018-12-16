@@ -1,7 +1,9 @@
 <?php 
 
-	session_start();
-
+	session_name("UserSession");
+	session_start([
+    'cookie_lifetime' => 86400,
+	]);
 
 	// connect to universal database
 	$db = mysqli_connect('localhost', 'rivacms', '', 'my_rivacms');
@@ -55,13 +57,13 @@
 		
 		// form validation: ensure that the form is correctly filled
 		if (empty($username)) { 
-			array_push($errors, "Username is required1"); 
+			array_push($errors, "Username is required"); 
 		}
 		if (empty($email)) { 
-			array_push($errors, "Email is required1"); 
+			array_push($errors, "Email is required"); 
 		}
 		if (empty($password_1)) { 
-			array_push($errors, "Password is required1"); 
+			array_push($errors, "Password is required"); 
 		}
 		if ($password_1 != $password_2) {
 			array_push($errors, "The two passwords do not match");
